@@ -52,8 +52,10 @@ if not _RELEASE:
 
     val = ClickableImage(
         src=img_str,
-        row_beams=[[10, 20], [80, 90]],
-        col_beams=[[50, 70], [300, 500], [900, 950]],
+        row_left_beams=[[10, 20], [80, 90]],
+        col_top_beams=[[50, 70], [300, 500], [900, 950]],
+        row_right_beams=[[15, 25], [87, 97]],
+        col_bottom_beams=[[320, 520], [700, 710]],
         width=1000,
         height=100,
     )
