@@ -30,29 +30,31 @@ class ClickableImage extends StreamlitComponentBase<State> {
     public render = (): ReactNode => {
         return (
             <div>
-                <ToggleButtonGroup
+                {
+                this.props.args.interactive && <ToggleButtonGroup
                     value={this.state.type}
                     exclusive
                     onChange={(e, value) => this.setState(() => ({ type: value, start: null, end: null }))}
                     aria-label="selection type"
-                    style={{margin: 2 }}
+                    style={{ margin: 2 }}
                     size="small"
                 >
                     <ToggleButton value="row" aria-label="row">Row</ToggleButton>
                     <ToggleButton value="col" aria-label="col">Col</ToggleButton>
                 </ToggleButtonGroup>
-                <br/>
+                }
+                <br />
                 <svg shapeRendering="optimizeSpeed"
                     viewBox={`0 0 ${this.props.args.width + 2 * this.extra + 1} ${this.props.args.height + 2 * this.extra + 1}`}
                     xmlns="http://www.w3.org/2000/svg"
                     ref={(svg) => this.svg = svg}
-                    onClick={e => this.handler(e)} >
+                    onClick={this.props.args.interactive ? (e => this.handler(e)) : undefined} >
                     <image href={this.props.args.src} width={this.props.args.width} height={this.props.args.height} x={this.extra} y={this.extra} />
                     {this.render_row_left_beams()}
                     {this.render_col_top_beams()}
                     {this.render_row_right_beams()}
                     {this.render_col_bottom_beams()}
-                    {this.render_clicked()}
+                    {this.props.args.interactive && this.render_clicked()}
                 </svg>
             </div>
         )

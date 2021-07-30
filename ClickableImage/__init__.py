@@ -58,6 +58,7 @@ if not _RELEASE:
         col_bottom_beams=[[320, 520], [700, 710]],
         width=1000,
         height=100,
+        interactive=False
     )
 
     st.write(val)
