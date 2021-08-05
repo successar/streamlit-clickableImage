@@ -84,22 +84,22 @@ class ClickableImage extends StreamlitComponentBase<State> {
         let row_extra = (this.props.args.extra_row !== undefined) ? this.props.args.extra_row.map((beam: number[]) => {
             if (beam.length == 1) {
                 return <line x1={this.extra} y1={this.extra + beam[0]} x2={this.extra + this.props.args.width}
-                    y2={this.extra + beam[0]} stroke="Lime" strokeWidth="3px" />
+                    y2={this.extra + beam[0]} stroke="darkgreen" strokeWidth="3px" />
             }
             else {
                 return <rect x={this.extra} y={this.extra + beam[0]} width={this.props.args.width}
-                    height={beam[1] - beam[0]} fill="Lime" opacity="0.95" />
+                    height={beam[1] - beam[0]} fill="darkgreen" opacity="0.45" />
             }
         }) : [];
 
         let col_extra = (this.props.args.extra_col !== undefined) ? this.props.args.extra_col.map((beam: number[]) => {
             if (beam.length == 1) {
                 return <line x1={this.extra + beam[0]} y1={this.extra} y2={this.extra + this.props.args.height}
-                    x2={this.extra + beam[0]} stroke="Lime" strokeWidth="3px" />
+                    x2={this.extra + beam[0]} stroke="darkgreen" strokeWidth="3px" />
             }
             else {
                 return <rect x={this.extra + beam[0]} y={this.extra} height={this.props.args.height}
-                    width={beam[1] - beam[0]} fill="Lime" opacity="0.95" />
+                    width={beam[1] - beam[0]} fill="darkgreen" opacity="0.45" />
             }
         }) : [];
 
@@ -112,7 +112,7 @@ class ClickableImage extends StreamlitComponentBase<State> {
             return (
                 <React.Fragment>
                     <rect x={this.extra} y={this.extra + beam[0]} width={this.props.args.width}
-                        height={beam[1] - beam[0]} fill="blue" opacity="0.25" />
+                        height={beam[1] - beam[0]} fill="blue" opacity="0.15" />
                     <rect x={0} y={this.extra + beam[0]} width={this.extra}
                         height={beam[1] - beam[0]} fill="blue" opacity="1.0" />
                 </React.Fragment>
@@ -125,7 +125,7 @@ class ClickableImage extends StreamlitComponentBase<State> {
             return (
                 <React.Fragment>
                     <rect x={this.extra + beam[0]} y={this.extra} height={this.props.args.height}
-                        width={beam[1] - beam[0]} fill="red" opacity="0.25" />
+                        width={beam[1] - beam[0]} fill="red" opacity="0.15" />
                     <rect x={this.extra + beam[0]} y={0} height={this.extra}
                         width={beam[1] - beam[0]} fill="red" opacity="1.0" />
                 </React.Fragment>
@@ -138,7 +138,7 @@ class ClickableImage extends StreamlitComponentBase<State> {
             return (
                 <React.Fragment>
                     <rect x={this.extra} y={this.extra + beam[0]} width={this.props.args.width}
-                        height={beam[1] - beam[0]} fill="aqua" opacity="0.25" />
+                        height={beam[1] - beam[0]} fill="aqua" opacity="0.15" />
                     <rect x={this.extra + this.props.args.width} y={this.extra + beam[0]} width={this.extra}
                         height={beam[1] - beam[0]} fill="aqua" opacity="1.0" />
                 </React.Fragment>
@@ -151,7 +151,7 @@ class ClickableImage extends StreamlitComponentBase<State> {
             return (
                 <React.Fragment>
                     <rect x={this.extra + beam[0]} y={this.extra} height={this.props.args.height}
-                        width={beam[1] - beam[0]} fill="orchid" opacity="0.25" />
+                        width={beam[1] - beam[0]} fill="orchid" opacity="0.15" />
                     <rect x={this.extra + beam[0]} y={this.extra + this.props.args.height} height={this.extra + 1}
                         width={beam[1] - beam[0]} fill="orchid" opacity="1.0" />
                 </React.Fragment>
